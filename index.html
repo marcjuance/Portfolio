@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated GIF-like Digital Data Stream Background -->
+  <div class="bg-stage" aria-hidden="true">
+    <canvas id="bg-data-canvas" class="bg-data-canvas"></canvas>
+    <div class="bg-scanlines"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <!-- Top Utility Bar -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span id="topbar-name" class="brand-name">Portfolio</span>
+        <span id="live-clock" class="telemetry-clock" title="Local time"></span>
+      </div>
+      <div class="topbar-actions">
+        <button id="open-palette-btn" class="btn btn-outline btn-sm" type="button" title="Quick jump & actions (Ctrl+K)">
+          <span aria-hidden="true">⌘</span>
+          <span>Quick Jump</span>
+          <kbd class="kbd-hint">Ctrl+K</kbd>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main">
+    <!-- Hero / Profile Overview Card -->
+    <section class="profile-card spotlight-surface" aria-label="Profile Summary">
+      <div id="cover-banner" class="cover-banner hidden">
+        <img id="cover-photo-img" src="" alt="Profile cover photo" />
+      </div>
+
+      <div class="profile-body">
+        <div class="profile-top">
+          <div class="avatar-wrap">
+            <div id="avatar-display" class="avatar-frame" aria-label="Profile photo"></div>
+          </div>
+
+          <div class="profile-identity">
+            <div class="status-row">
+              <span id="profile-status-badge" class="status-badge">
+                <span class="status-pulse" aria-hidden="true"></span>
+                <span id="profile-status-text">Junior IT</span>
+              </span>
+              <span id="profile-availability" class="availability-pill">Open to opportunities</span>
+            </div>
+
+            <h1 id="profile-name" class="profile-name">Marc LJ B. Juance</h1>
+            <p id="profile-headline" class="profile-headline"></p>
+            <p id="profile-location" class="profile-location"></p>
+          </div>
+        </div>
+
+        <div class="summary-box">
+          <div class="summary-label">Summary About Me</div>
+          <p id="profile-summary" class="profile-summary"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Primary Section Buttons -->
+    <nav class="section-nav" aria-label="Portfolio sections">
+      <div class="section-buttons" role="tablist" aria-label="Portfolio sections">
+        <button class="nav-btn active" type="button" data-section="about" role="tab" aria-selected="true">
+          <span class="nav-btn-icon" aria-hidden="true">👤</span>
+          <span>About Me</span>
+        </button>
+        <button class="nav-btn" type="button" data-section="education" role="tab" aria-selected="false">
+          <span class="nav-btn-icon" aria-hidden="true">🎓</span>
+          <span>My Education</span>
+        </button>
+        <button class="nav-btn" type="button" data-section="skills" role="tab" aria-selected="false">
+          <span class="nav-btn-icon" aria-hidden="true">⚡</span>
+          <span>Skills &amp; Expertise</span>
+        </button>
+        <button class="nav-btn" type="button" data-section="projects" role="tab" aria-selected="false">
+          <span class="nav-btn-icon" aria-hidden="true">🔬</span>
+          <span>Projects &amp; Research</span>
+        </button>
+        <button class="nav-btn" type="button" data-section="trainings" role="tab" aria-selected="false">
+          <span class="nav-btn-icon" aria-hidden="true">🏅</span>
+          <span>Trainings &amp; Certificates</span>
+        </button>
+        <button class="nav-btn" type="button" data-section="contacts" role="tab" aria-selected="false">
+          <span class="nav-btn-icon" aria-hidden="true">📬</span>
+          <span>Contacts</span>
+        </button>
+      </div>
+
+      <button id="view-all-btn" class="btn btn-outline view-all-btn" type="button" aria-pressed="false">
+        View All Sections
+      </button>
+    </nav>
+
+    <!-- Dynamic Section Content -->
+    <section id="section-stage" class="section-stage" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span id="footer-copy"></span>
+    </div>
+  </footer>
+
+  <!-- Full-Size Photo / CV Lightbox Modal -->
+  <div id="lightbox-backdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-modal">
+      <div class="lightbox-header">
+        <h2 id="lightbox-title" class="lightbox-title">Preview</h2>
+        <div class="lightbox-actions">
+          <a id="lightbox-download" class="btn btn-outline btn-sm hidden" href="#" download>⬇ Download</a>
+          <button id="close-lightbox-btn" class="btn btn-ghost btn-sm" type="button" aria-label="Close preview">✕</button>
+        </div>
+      </div>
+      <div class="lightbox-body">
+        <img id="lightbox-img" src="" alt="" />
+        <p id="lightbox-caption" class="lightbox-caption hidden"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Jump Command Palette Modal -->
+  <div id="palette-backdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="palette-title">
+    <div class="palette-modal">
+      <div class="palette-search-row">
+        <span class="palette-prompt" aria-hidden="true">&gt;_</span>
+        <input id="palette-input" type="text" placeholder="Type a section or action (e.g. education, skills, cv, copy email)..." aria-label="Quick jump search" />
+        <button id="close-palette-btn" class="btn btn-ghost btn-sm" type="button" aria-label="Close quick jump">Esc</button>
+      </div>
+      <h2 id="palette-title" class="sr-only">Quick Jump Commands</h2>
+      <ul id="palette-list" class="palette-list" role="listbox"></ul>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="portfolio-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
