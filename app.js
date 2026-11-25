@@ -614,34 +614,6 @@
       });
     });
   }
-
-  async function copyText(value) {
-    try {
-      await navigator.clipboard.writeText(value);
-      showToast(`Copied: ${value}`);
-    } catch (_) {
-      showToast("Copy failed — please select and copy manually.");
-    }
-  }
-
-  /* -------------------- Live Telemetry Clock -------------------- */
-
-  function startTelemetryClock() {
-    const clockEl = document.getElementById("live-clock");
-    if (!clockEl) return;
-    function tick() {
-      const now = new Date();
-      const timeStr = now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      });
-      clockEl.textContent = `ONLINE · ${timeStr}`;
-    }
-    tick();
-    setInterval(tick, 1000);
-  }
-
   /* -------------------- GIF-Like Animated Digital Background -------------------- */
 
   function initDataStreamBackground() {
@@ -800,6 +772,75 @@
       if (rafId) window.cancelAnimationFrame(rafId);
     });
   }
-}
+
+  /* -------------------- Global Wireup -------------------- */
+
+  function init() {
+    renderAll();
+    startTelemetryClock();
+    initDataStreamBackground();
+
+    // Section navigation buttons
+    document.querySelectorAll(".nav-btn[data-section]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        navigateToSection(btn.getAttribute("data-section"));
+      });
+    });
+
+    // View All toggle
+    document.getElementById("view-all-btn").addEventListener("click", () => {
+      state.viewAll = !state.viewAll;
+      renderNavState();
+      renderStage();
+    });
+
+    // Delegated interactions inside stage (copy, project filter, skill filter, lightbox triggers)
+    const stage = document.getElementById("section-stage");
+
+    stage.addEventListener("click", (e) => {
+      const copyBtn = e.target.closest(".copy-btn");
+      if (copyBtn) {
+        copyText(copyBtn.getAttribute("data-copy"));
+        return;
+      }
+
+      const projBtn = e.target.closest("[data-proj-filter]");
+      if (projBtn) {
+        state.projectFilter = projBtn.getAttribute("data-proj-filter");
+        renderStage();
+        return;
+      }
+
+      const lbTrigger = e.target.closest("[data-lightbox-src]");
+      if (lbTrigger) {
+        openLightbox(
+          lbTrigger.getAttribute("data-lightbox-src"),
+          lbTrigger.getAttribute("data-lightbox-title"),
+          lbTrigger.getAttribute("data-lightbox-caption"),
+          lbTrigger.getAttribute("data-lightbox-download") === "true"
+        );
+      }
+    });
+
+    stage.addEventListener("input", (e) => {
+      if (e.target && e.target.id === "skill-filter-input") {
+        state.skillQuery = e.target.value;
+        const cursorPos = e.target.selectionStart;
+        renderStage();
+        const freshInput = document.getElementById("skill-filter-input");
+        if (freshInput) {
+          freshInput.focus();
+          freshInput.setSelectionRange(cursorPos, cursorPos);
+        }
+      }
+    });
+
+    // Lightbox close
+    document.getElementById("close-lightbox-btn").addEventListener("click", closeLightbox);
+    document.getElementById("lightbox-backdrop").addEventListener("click", (e) => {
+      if (e.target.id === "lightbox-backdrop") closeLightbox();
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", init);
 })();
