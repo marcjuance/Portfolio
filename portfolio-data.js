@@ -94,20 +94,6 @@ window.PORTFOLIO_DATA = {
   ],
 
   trainingsAndCertificates: [
-    {
-      title: "Google IT Support Professional Certificate",
-      issuer: "Coursera / Google",
-      date: "2026",
-      credentialId: "CERT-SAMPLE-001",
-      link: ""
-    },
-    {
-      title: "Cisco Introduction to Networks (CCNAv7)",
-      issuer: "Cisco Networking Academy",
-      date: "2026",
-      credentialId: "CISCO-SAMPLE-204",
-      link: ""
-    },
   ],
 
   contacts: {
