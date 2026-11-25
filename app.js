@@ -200,7 +200,7 @@
     return `
       <article class="panel-card" id="section-about">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true">👤</span> About Me</h2>
+          <h2 class="panel-title"><span aria-hidden="true"></span> About Me</h2>
         </div>
         <div class="about-paragraphs">${paragraphsHtml}</div>
         ${highlightsHtml}
@@ -234,7 +234,7 @@
     return `
       <article class="panel-card" id="section-education">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true">🎓</span> My Education</h2>
+          <h2 class="panel-title"><span aria-hidden="true"></span> My Education</h2>
         </div>
         ${body}
       </article>
@@ -271,7 +271,7 @@
     return `
       <article class="panel-card" id="section-skills">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true">⚡</span> Skills &amp; Expertise</h2>
+          <h2 class="panel-title"><span aria-hidden="true"></span> Skills &amp; Expertise</h2>
           <input
             id="skill-filter-input"
             class="skill-search-input"
@@ -339,7 +339,7 @@
     return `
       <article class="panel-card" id="section-projects">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true">🔬</span> Projects &amp; Research</h2>
+          <h2 class="panel-title"><span aria-hidden="true"></span> Projects &amp; Research</h2>
           <div class="filter-pills" role="group" aria-label="Filter projects and research">
             <button type="button" class="filter-pill ${filter === "all" ? "active" : ""}" data-proj-filter="all">All</button>
             <button type="button" class="filter-pill ${filter === "project" ? "active" : ""}" data-proj-filter="project">Projects</button>
@@ -382,7 +382,7 @@
     return `
       <article class="panel-card" id="section-trainings">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true">🏅</span> Trainings &amp; Certificates</h2>
+          <h2 class="panel-title"><span aria-hidden="true"></span> Trainings &amp; Certificates</h2>
         </div>
         ${body}
       </article>
@@ -470,7 +470,7 @@
     return `
       <article class="panel-card" id="section-contacts">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true">📬</span> Contacts</h2>
+          <h2 class="panel-title"><span aria-hidden="true"></span> Contacts</h2>
         </div>
         ${c.locationNote ? `<p class="entry-desc" style="margin-bottom: 1rem;">${escapeHtml(c.locationNote)}</p>` : ""}
         <div class="contacts-grid">
