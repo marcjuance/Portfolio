@@ -89,7 +89,7 @@
     document.getElementById("profile-name").textContent = p.name || "Your Name";
     document.getElementById("profile-status-text").textContent = p.status || "Status";
     document.getElementById("profile-headline").textContent = p.headline || "";
-    document.getElementById("profile-location").textContent = p.location ? `📍 ${p.location}` : "";
+    document.getElementById("profile-location").textContent = p.location ? p.location : "";
     document.getElementById("profile-summary").textContent = p.summary || "";
 
     const availEl = document.getElementById("profile-availability");
@@ -200,7 +200,7 @@
     return `
       <article class="panel-card" id="section-about">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true"></span> About Me</h2>
+          <h2 class="panel-title">About Me</h2>
         </div>
         <div class="about-paragraphs">${paragraphsHtml}</div>
         ${highlightsHtml}
@@ -234,7 +234,7 @@
     return `
       <article class="panel-card" id="section-education">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true"></span> My Education</h2>
+          <h2 class="panel-title">My Education</h2>
         </div>
         ${body}
       </article>
@@ -271,7 +271,7 @@
     return `
       <article class="panel-card" id="section-skills">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true"></span> Skills &amp; Expertise</h2>
+          <h2 class="panel-title">Skills &amp; Expertise</h2>
           <input
             id="skill-filter-input"
             class="skill-search-input"
@@ -339,7 +339,7 @@
     return `
       <article class="panel-card" id="section-projects">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true"></span> Projects &amp; Research</h2>
+          <h2 class="panel-title">Projects &amp; Research</h2>
           <div class="filter-pills" role="group" aria-label="Filter projects and research">
             <button type="button" class="filter-pill ${filter === "all" ? "active" : ""}" data-proj-filter="all">All</button>
             <button type="button" class="filter-pill ${filter === "project" ? "active" : ""}" data-proj-filter="project">Projects</button>
@@ -382,7 +382,7 @@
     return `
       <article class="panel-card" id="section-trainings">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true"></span> Trainings &amp; Certificates</h2>
+          <h2 class="panel-title">Trainings &amp; Certificates</h2>
         </div>
         ${body}
       </article>
@@ -459,8 +459,8 @@
         ${
           cvSrc
             ? `<div class="cv-actions">
-                <button type="button" class="btn btn-outline btn-sm" data-lightbox-src="${escapeHtml(cvSrc)}" data-lightbox-title="${escapeHtml(cvTitle)}" data-lightbox-caption="${escapeHtml(cv.caption || "")}" data-lightbox-download="true">🔍 View Full Size</button>
-                <a class="btn btn-outline btn-sm" href="${escapeHtml(cvSrc)}" download>⬇ Download</a>
+                <button type="button" class="btn btn-outline btn-sm" data-lightbox-src="${escapeHtml(cvSrc)}" data-lightbox-title="${escapeHtml(cvTitle)}" data-lightbox-caption="${escapeHtml(cv.caption || "")}" data-lightbox-download="true">View Full Size</button>
+                <a class="btn btn-outline btn-sm" href="${escapeHtml(cvSrc)}" download>Download</a>
               </div>`
             : ""
         }
@@ -470,7 +470,7 @@
     return `
       <article class="panel-card" id="section-contacts">
         <div class="panel-header">
-          <h2 class="panel-title"><span aria-hidden="true"></span> Contacts</h2>
+          <h2 class="panel-title">Contacts</h2>
         </div>
         ${c.locationNote ? `<p class="entry-desc" style="margin-bottom: 1rem;">${escapeHtml(c.locationNote)}</p>` : ""}
         <div class="contacts-grid">
@@ -777,7 +777,6 @@
 
   function init() {
     renderAll();
-    startTelemetryClock();
     initDataStreamBackground();
 
     // Section navigation buttons
@@ -839,6 +838,12 @@
     document.getElementById("close-lightbox-btn").addEventListener("click", closeLightbox);
     document.getElementById("lightbox-backdrop").addEventListener("click", (e) => {
       if (e.target.id === "lightbox-backdrop") closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeLightbox();
+      }
     });
   }
 
