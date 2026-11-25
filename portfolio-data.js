@@ -89,7 +89,7 @@ window.PORTFOLIO_DATA = {
       description:
         "Led the front-end design and development of GeoGarden, a plant-care application designed for users with Color Vision Deficiency, featuring plant monitoring, personalized care recommendations, and an accessible user interface.",
       tags: ["HTML/CSS/JS", "UI/UX Design", "Responsive Design","Accessibility", "Front-end Development"],
-      link: "",https://www.figma.com/proto/G0ynqc406uaT6ty2eWo2g3/Juance_CIT118-K11_Prototype?node-id=0-1&t=6HOeeXCyvL98Tvl6-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A18&show-proto-sidebar=1&fuid=1479194423627701093"
+      link: "", www.figma.com/proto/G0ynqc406uaT6ty2eWo2g3/Juance_CIT118-K11_Prototype?node-id=0-1&t=6HOeeXCyvL98Tvl6-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A18&show-proto-sidebar=1&fuid=1479194423627701093"
       photo: ""  // Optional image path, e.g. "assets/helpdesk.jpg"
     },
     {
