@@ -84,10 +84,10 @@ window.PORTFOLIO_DATA = {
       type: "Research",
       title: "ReliefLink: A Java-Based Disaster Relief Distribution Management System",
       year: "2026",
-      role: "Researcher",
+      role: "Researcher/Lead System Developer",
       description:
-        "Undergraduate research study a system designed to organize beneficiary records, streamline relief distribution, and track the claiming status of beneficiaries at the barangay level.",
-      tags: ["Data Structures", "Data Analysis"],
+        "Undergraduate research study, a system designed to organize beneficiary records, streamline relief distribution, and track the claiming status of beneficiaries at the barangay level.",
+      tags: ["Java", "Java Swing", "Data Structures & Algorithms", "UI/UX Design", "System Development"],
       link: "https://docs.google.com/document/d/1FMdpQntgejA7hJmS9H3UwpSiezET-RjTvSyHn3Yqoyw/edit?tab=t.0",
       photo: ""
     }
