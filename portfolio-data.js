@@ -7,7 +7,7 @@ window.PORTFOLIO_DATA = {
     location: "Negros Occidental, Bacolod City, Philippines",
     availability: "Open to opportunities & collaborations",
     summary:
-      "Detail-oriented technology enthusiast passionate about building reliable web applications, supporting IT infrastructure, and continuously learning through hands-on projects and research.",
+      "I am an Information Systems student with a strong interest in software development, UI/UX design, and database management. I enjoy creating practical technology solutions, developing user-friendly applications, and applying my technical knowledge to real-world problems. I am eager to learn, improve my skills, and grow as a future IT/IS professional.",
     avatarPhoto: "assets/me.jpg", // Example: "assets/me.jpg" (leave "" to show initials)
     coverPhoto: "",  // Optional banner image, e.g. "assets/cover.jpg"
     galleryPhotos: [
@@ -19,7 +19,7 @@ window.PORTFOLIO_DATA = {
   about: {
     bioParagraphs: [
       "Hello! I am a dedicated tech learner and practitioner who enjoys bridging technical troubleshooting with clean, user-friendly software solutions.",
-      "I am currently a student pursuing a degree in Information Systems. While I am still in school, I am actively seeking opportunities to apply my knowledge and gain real-world experience."
+      "I am currently a Undergraduate Student at University of Negros Occidental Recoletos pursuing a degree in Information Systems. While I am still in school, I am actively seeking opportunities to apply my knowledge and gain real-world experience."
     ],
     highlights: [
       { label: "Current Focus", value: "IT Operations, Networking & Full-Stack Web" },
