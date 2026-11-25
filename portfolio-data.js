@@ -14,7 +14,7 @@ window.PORTFOLIO_DATA = {
   profile: {
     name: "Marc LJ B. Juance",
     // Examples: "Student", "Instructor", "Junior IT", "IT Support Specialist", "Software Developer"
-    status: "Student",
+    status: "Undergraduate Student",
     headline: "Aspiring Systems & Web Specialist | Problem Solver",
     location: "Negros Occidental, Bacolod City, Philippines",
     availability: "Open to opportunities & collaborations",
@@ -94,13 +94,13 @@ window.PORTFOLIO_DATA = {
     },
     {
       type: "Research",
-      title: "Evaluating Network Latency & Reliability in Hybrid Classrooms",
-      year: "2025",
-      role: "Co-Researcher",
+      title: "ReliefLink: A Java-Based Disaster Relief Distribution Management System",
+      year: "2026",
+      role: "Researcher",
       description:
-        "Undergraduate research study analyzing Wi-Fi access point load distribution and proposing low-cost QoS optimizations for academic computer laboratories.",
-      tags: ["Networking", "QoS", "Data Analysis"],
-      link: "",
+        "Undergraduate research study a system designed to organize beneficiary records, streamline relief distribution, and track the claiming status of beneficiaries at the barangay level.",
+      tags: ["Data Structures", "Data Analysis"],
+      link: "https://docs.google.com/document/d/1FMdpQntgejA7hJmS9H3UwpSiezET-RjTvSyHn3Yqoyw/edit?tab=t.0",
       photo: ""
     }
   ],
