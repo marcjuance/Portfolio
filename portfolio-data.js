@@ -39,7 +39,7 @@ window.PORTFOLIO_DATA = {
     {
       institution: "University of Negros Occidental - Recoletos",
       degree: "Bachelor of Science in Civil Engineering",
-      period: "2024-2026",
+      period: "2021-2024",
       location: "Bacolod City, Negros Occidental"
     },
     {
