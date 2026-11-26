@@ -102,7 +102,7 @@ window.PORTFOLIO_DATA = {
     locationNote: "Available for onsite, hybrid, or remote roles.",
     cvResume: {
       title: "CV / Resume",
-      photo: "", // Insert your CV/Resume photo path here, e.g. "assets/cv-resume.jpg"
+      photo: "assets/cvresume.jpg", // Insert your CV/Resume photo path here, e.g. "assets/cv-resume.jpg"
       caption: "Click to view full-size CV / Resume"
     },
     socials: [
