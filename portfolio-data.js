@@ -33,8 +33,14 @@ window.PORTFOLIO_DATA = {
       institution: "University of Negros Occidental – Recoletos",
       degree: "Bachelor of Science in Information Systems",
       period: "2024 – 2028",
-      location: "Bacolod City",
+      location: "Bacolod City, Negros Occidental",
       details: "Relevant coursework: Networking, Troubleshooting, Web development, and System Administration "
+    },
+    {
+      institution: "University of Negros Occidental - Recoletos",
+      degree: "Bachelor of Science in Civil Engineering",
+      period: "2024-2026",
+      location: "Bacolod City, Negros Occidental"
     },
     {
       institution: "La Consolacion College Bacolod",
